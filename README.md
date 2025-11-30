@@ -4,7 +4,7 @@ This repository contains the code for an RSI- and LCCA-based pavement network op
 It includes:
 - Remaining Service Interval (RSI) performance modeling for flexible pavements.
 - Life-Cycle Cost Analysis (LCCA) at project and network level.
-- Enumeration of all feasible MR&R treatments.
+- Enumeration of all feasible maintenance, rehabilitation, and reconstruction (MR&R) treatments.
 - Optimization of MR&R alternatives under budget constraint.
 
 ## Installation
