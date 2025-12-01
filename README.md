@@ -15,6 +15,7 @@ It includes:
    cd rsi-lcca-pavement-optimization-tool
 
 3. Install dependencies:
+   ```bash
    pip install -r requirements.txt
 
 ## Usage
@@ -22,6 +23,7 @@ It includes:
 After installation and creating/adjusting the input CSV in `data/`:
 
 1. Run the per-section RSI/LCCA analysis in batch mode:
+   ```bash
    python src/main.py --batch data/example_sections.csv
    --batch = path to a CSV with all sections (your input table).
    
