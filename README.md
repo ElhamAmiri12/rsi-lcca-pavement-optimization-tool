@@ -25,12 +25,15 @@ After installation and creating/adjusting the input CSV in `data/`:
 1. Run the per-section RSI/LCCA analysis in batch mode:
    ```bash
    python src/main.py --batch data/example_sections.csv
+   
    --batch = path to a CSV with all sections (your input table).
    
 This creates per-section result files in the outputs/ folder.
 
 3. Aggregate the Top-3 alternatives for each section and optimize under a network budget:
+   ```bash
    python src/optimization.py --outputs outputs --budget 3500000
+   
    --outputs = the same folder where main.py wrote its results.
    --budget = your network budget (e.g., 3500000 dollars).
    
