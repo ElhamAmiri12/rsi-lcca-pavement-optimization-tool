@@ -155,12 +155,10 @@ def aggregate_top3(outputs_root: Path):
         # keep common columns and add Section
         keep = [c for c in ("Rank","Seq_str","Area","NPV_Agency","NPV_User","NPV_Total","Agency_Cost_Abs") if c in t3.columns]
         
-        # ensure Section exists and is filled
-        if "Section" not in t3.columns:
-            t3.insert(0, "Section", sec_name)
-        else:
-            t3["Section"] = sec_name
+        if "Section" in t3.columns:
+            t3 = t3.drop(columns=["Section"])
         
+        t3.insert(0, "Section", sec_name)
         t3 = t3[["Section"] + keep]
 
         top3_frames.append(t3)
