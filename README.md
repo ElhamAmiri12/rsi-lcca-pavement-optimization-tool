@@ -14,30 +14,27 @@ It includes:
    git clone https://github.com/ElhamAmiri12/rsi-lcca-pavement-optimization-tool.git
    cd rsi-lcca-pavement-optimization-tool
 
-3. Install dependencies:
+2. Install dependencies:
    ```bash
    pip install -r requirements.txt
 
 ## Usage
 
-After installation and creating/adjusting the input CSV in `data/`:
-
+After installation and creating/adjusting the input CSV in the data/ folder:
 1. Run the per-section RSI/LCCA analysis in batch mode:
    ```bash
    python src/main.py --batch data/example_sections.csv
-   
-   --batch = path to a CSV with all sections (your input table).
-   
+   •   --batch is the path to a CSV file containing all sections (your input table).
 This creates per-section result files in the outputs/ folder.
 
-3. Aggregate the Top-3 alternatives for each section and optimize under a network budget:
+2. Aggregate the Top-3 alternatives for each section and optimize under a network budget:
    ```bash
    python src/optimization.py --outputs outputs --budget 3500000
+   •   --outputs = the same folder where main.py wrote its results.
+   •   --budget = your network budget (e.g., 3500000 dollars).
    
-   --outputs = the same folder where main.py wrote its results.
-   --budget = your network budget (e.g., 3500000 dollars).
-   
-This writes _network_summary.xlsx in the outputs/ folder, including:
-- All_Top3 (Top-3 alternatives per section)
-- Rank_Sums (Total NPV under each rank)
-- Optimization (selected MR&R alternative under the given budget)
+The optimization step writes a file _network_summary.xlsx into the outputs/ folder, including:
+- Top-3 alternatives per section,
+- Total NPV under each rank,
+- Coverage information,
+- The selected MR&R alternative under the specified budget.
